@@ -49,10 +49,10 @@ Implement features to encourage customer engagement, such as newsletters, loyalt
 
 ## Tech Stack
 ### MERN - Mongo DB, Express(.js), React(.js), Node(.js)
-MongoDB — document database
-Express(.js) — Node.js web framework
-React(.js) — a client-side JavaScript framework
-Node(.js) — the premier JavaScript web server
+MongoDB — document database  
+Express(.js) — Node.js web framework  
+React(.js) — a client-side JavaScript framework  
+Node(.js) — the premier JavaScript web server  
 
 ## Back-End
 
