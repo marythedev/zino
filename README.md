@@ -6,7 +6,7 @@
 | Stephen Vizl  | Role Placeholder | svizl1 | svizl1@myseneca.ca |
 | Maria Dmytrenko  | Role Placeholder | marythedev | mdmytrenko@myseneca.ca |
 | Tianchen Zhang  | Role Placeholder | tzhang98 | tzhang98@myseneca.ca |
-| Abel Okoh  | Role Placeholder | git ID | aokoh@myseneca.ca |
+| Abel Okoh  | Role Placeholder | Abellybaba | aokoh@myseneca.ca |
 
 ## Project Description
 This project aims to create a powerful e-commerce platform designed specifically for a retail business. The envisioned website will serve as a comprehensive solution focused on facilitating efficient item sales and empowering the store to leverage data for informed marketing and business decisions. The project will concentrate on implementing key features to optimize the retail e-commerce process with a primary focus on:
