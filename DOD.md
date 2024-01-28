@@ -21,7 +21,7 @@ The purpose of this document is to establish a clear understanding of what compl
 - [ ] Inline comments and documentation are present where necessary.
 
 ## 4. Code Review
-- [ ] Code has been peer-reviewed and any raised issues have been resolved.
+- [ ] Code has been peer-reviewed by at least one person and any raised issues have been resolved.
 - [ ] Code review checklist has been completed.
 - [ ] The code meets all acceptance criteria set for the task.
 
