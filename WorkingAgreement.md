@@ -62,3 +62,5 @@ This document outlines the team's working agreement. It is intended to guide our
 By signing below, each team member acknowledges that they have read, understood, and agree to abide by this Team Working Agreement.
 
 Stephen Vizl | Jan 29, 2024
+Tianchen Zhang | Jan 29, 2024
+
