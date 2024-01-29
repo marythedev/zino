@@ -57,3 +57,8 @@ This document outlines the team's working agreement. It is intended to guide our
 
 ## Amendments to the Agreement
 **Review and Update**: This document should be reviewed and updated quarterly or as needed.
+
+## Signatures:
+By signing below, each team member acknowledges that they have read, understood, and agree to abide by this Team Working Agreement.
+
+Stephen Vizl | Jan 29, 2024
