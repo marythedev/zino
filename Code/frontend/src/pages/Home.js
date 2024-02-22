@@ -3,7 +3,7 @@ import './Home.css';
 
 const fetchGet = () => {
   console.log("Fetching Get from backend...");
-  fetch("http://localhost:8080/api", {
+  fetch("https://group-13-jtix.vercel.app/api", {
     method: "GET"
   })
     .then(res => res.text())
@@ -13,7 +13,7 @@ const fetchGet = () => {
 
 const fetchPost = () => {
   console.log("Fetching Post from backend");
-  fetch("http://localhost:8080/api", {
+  fetch("https://group-13-jtix.vercel.app/api", {
     method: "POST"
   })
     .then(res => res.text())
