@@ -16,13 +16,27 @@ This repository contains a simple Node.js server and route controllers built usi
 ### Server.js
 The `server.js` file contains the main server setup, including middleware, routing, error handling, and server startup logic.
 
-### RouteControllers
-The `routeController.js` file contains route handling logic, including basic MongoDB schema setup, GET, and POST request handlers.
-
-### Routes
-- `GET /api/`: Handles GET requests.
-- `POST /api/`: Handles POST requests.
-
 ### Error Handling
 - Custom error handling for 404 Not Found errors.
 - General error handling for internal server errors (500).
+
+
+
+___
+## Folder Structure
+
+#### controllers folder:
+- Contains modules responsible for handling business logic and application flow.
+- These modules typically contain functions or middleware that interact with data models, perform validations, and orchestrate the flow of data within the application.
+- Example: `userController.js`, `authController.js`, etc.
+
+#### routes folder:
+- Contains the module responsible for defining application routes and mapping HTTP requests to corresponding controller functions.
+- This module utilizes **Express Router** to define routes and associate them with appropriate controller functions.
+- Example: `router.js`
+
+#### tests folder:
+- Contains test files for unit testing, integration testing, or end-to-end testing of the application.
+- These test files utilize testing frameworks like Jest to write and execute tests that verify the functionality of different components of the application.
+- Example: `userController.test.js`, etc.
+- Currently **npm test** is setup to run the jest tests from this folder
