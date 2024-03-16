@@ -11,15 +11,9 @@ const min = 12; //min length
 const max = 18; // max length
 
 function validatePassword(password) {
-  if (password.length < min) {
-    return false;
-  }
-  if (password.length > max) {
-    return false;
-  }
-
-  return true;
+  return password.length >= min && password.length <= max;
 }
+
 
 //Help prevent noSQL injecton via validation regex
 function validateUsername(username) {
