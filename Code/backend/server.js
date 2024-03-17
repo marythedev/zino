@@ -13,18 +13,20 @@ app.use(cors());
 app.use(express.json());
 
 // Mongo Connection
-const uri ="mongodb+srv://cAdmin:ug4C3Kt1nWmtEpok@clcap.zlpvbwi.mongodb.net/?retryWrites=true&w=majority&appName=CLCap";
+const uri =
+  "mongodb+srv://capstone:5ai6KcG6Jll9EXA4@capstone-ecommerce.x4jcmxk.mongodb.net/?retryWrites=true&w=majority&appName=Capstone-Ecommerce";
 
-mongoose.connect(uri, {})
-.then(() => {
-  if (enableLogging) {
-    console.log("MongoDB connected successfully");
-  }
-})
-.catch((err) => {
-  console.error("Error connecting to MongoDB:", err);
-  process.exit(1);
-});
+mongoose
+  .connect(uri, {})
+  .then(() => {
+    if (enableLogging) {
+      console.log("MongoDB connected successfully");
+    }
+  })
+  .catch((err) => {
+    console.error("Error connecting to MongoDB:", err);
+    process.exit(1);
+  });
 
 // Terminal Logging Functionality
 app.use((req, res, next) => {

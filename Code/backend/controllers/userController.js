@@ -1,10 +1,13 @@
 /***********************************************
-*                                              *
-*   This File handles user account creation    *
-*                                              *
-***********************************************/ 
+ *                                              *
+ *   This File handles user account creation    *
+ *                                              *
+ ***********************************************/
 const bcrypt = require("bcrypt");
 const User = require("../models/User");
+
+//Import jwt
+const jwt = require("jsonwebtoken");
 
 //Password rules:
 const min = 12; //min length
@@ -14,10 +17,9 @@ function validatePassword(password) {
   return password.length >= min && password.length <= max;
 }
 
-
 //Help prevent noSQL injecton via validation regex
 function validateUsername(username) {
-  const usernameRegex = /^[a-zA-Z0-9]+$/; 
+  const usernameRegex = /^[a-zA-Z0-9]+$/;
   return usernameRegex.test(username);
 }
 
@@ -53,9 +55,14 @@ async function createUser(req, res) {
     // Validate password (minimum length)
     valid = validatePassword(password);
     if (valid == false) {
-      return res
-        .status(400)
-        .json({message: "Password must be between " + min + " and " + max + " characters long",});
+      return res.status(400).json({
+        message:
+          "Password must be between " +
+          min +
+          " and " +
+          max +
+          " characters long",
+      });
     }
 
     // Check DB: if username is already taken
@@ -90,6 +97,32 @@ async function createUser(req, res) {
   }
 }
 
+async function loginUser(req, res) {
+  const { username, password } = req.body;
+
+  // Find the user by username
+  let user = await User.findOne({ username });
+  if (!user) {
+    return res.status(400).json({ message: "User not found" });
+  }
+
+  // Compare password
+  const isValid = await bcrypt.compare(password, user.password);
+  if (!isValid) {
+    return res.status(400).json({ message: "Invalid credentials" });
+  }
+
+  // Generate a token
+  const token = jwt.sign(
+    { userId: user._id, isAdmin: user.isAdmin },
+    process.env.JWT_SECRET,
+    { expiresIn: "1h" }
+  );
+
+  res.json({ message: "Login successful", token });
+}
+
 module.exports = {
   createUser,
+  loginUser,
 };
