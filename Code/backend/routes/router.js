@@ -1,6 +1,6 @@
 const express = require("express");
 const routeController = require("../controllers/basicRouteController");
-const { createUser, loginUser, enable2FA, verify2FA } = require("../controllers/userController");
+const { createUser, loginUser, verify2FAToken } = require("../controllers/userController");
 
 const authenticateToken = require("../middlewares/authenticateToken");
 const verifyAdmin = require("../middlewares/verifyAdmin");
@@ -23,7 +23,7 @@ router.use("/api/admin", authenticateToken, adminController);
 // Product routes
 router.use("/api/products", productController); // Use product controller for product routes
 
-router.post('/enable-2fa', authenticateToken, userController.enable2FA);
-router.post('/verify-2fa', authenticateToken, userController.verify2FA);
+//router.post('/enable-2fa', authenticateToken, enable2FA); //Note to tianchen: enable 2FA does not exist in userController, why are you referencing this?
+router.post('/verify-2fa', authenticateToken, verify2FAToken);
 
 module.exports = router;
