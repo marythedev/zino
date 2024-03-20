@@ -33,6 +33,14 @@ function validateEmail(email) {
   return emailRegex.test(email);
 }
 
+function verify2FAToken(userSecret, token) {
+  return speakeasy.totp.verify({
+    secret: userSecret,
+    encoding: 'base32',
+    token: token,
+  });
+}
+
 async function createUser(req, res) {
   const { username, email, password } = req.body;
   try {
@@ -136,14 +144,9 @@ async function loginUser(req, res) {
 }
 }
 
-function verify2FAToken(userSecret, token) {
-  return speakeasy.totp.verify({
-    secret: userSecret,
-    encoding: 'base32',
-    token: token,
-  });
-}
+
 module.exports = {
   createUser,
   loginUser,
+  verify2FAToken,
 };
