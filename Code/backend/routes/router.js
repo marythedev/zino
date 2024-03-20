@@ -4,7 +4,7 @@ const { createUser, loginUser, enable2FA, verify2FA } = require("../controllers/
 
 const authenticateToken = require("../middlewares/authenticateToken");
 const verifyAdmin = require("../middlewares/verifyAdmin");
-const { loginUser } = require("../controllers/userController");
+
 const adminController = require("../controllers/adminController"); // Ensure this path is correct
 const productController = require("../controllers/productController"); // Import the product controller
 
