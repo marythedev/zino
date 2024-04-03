@@ -18,6 +18,9 @@ const Navbar = () => {
           <li>
             <Link to="/exampleLandingPage">Bootstrap Store Page Example</Link>
           </li>
+          <li className="register-link">
+            <Link to="/register">Register</Link>
+          </li>
         </ul>
       </nav>
     </div>
