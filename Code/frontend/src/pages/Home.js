@@ -1,35 +1,23 @@
 import React from 'react';
 import './Home.css';
 
-const fetchGet = () => {
-  console.log("Fetching Get from backend...");
-  fetch("https://group-13-jtix.vercel.app/api", {
-    method: "GET"
-  })
-    .then(res => res.text())
-    .then(res => console.log(res))
-    .catch(err => console.log(err));
-}
-
-const fetchPost = () => {
-  console.log("Fetching Post from backend");
-  fetch("https://group-13-jtix.vercel.app/api", {
-    method: "POST"
-  })
-    .then(res => res.text())
-    .then(res => console.log(res))
-    .catch(err => console.log(err));
-}
-
 const Home = () => {
-  return (
+  return ( 
     <div className="home-body">
+      <ul id="home-category-nav">
+        <li>Tech</li>
+        <li>Outdoor Gear</li>
+        <li>Home Appliences</li>
+        <li>Women's</li>
+        <li>Men's</li>
+        <li>Kids'</li>
+        <li>Accessories</li>
+        <li>Shoes</li>
+        <li>Other</li>
+      </ul>
+      
       <h1>Welcome to our online shop :)</h1>
-      <div className="home-button-row"> {/* Use home-button-row class */}
-        <button className="home-button" onClick={fetchGet}>Backend Test: GET</button>
-        <button className="home-button" onClick={fetchPost}>Backend Test: POST</button>
-      </div>
-    </div>
+    </div >
   );
 }
 
