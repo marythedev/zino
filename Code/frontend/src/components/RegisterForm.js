@@ -32,7 +32,7 @@ function RegisterForm() {
       return;
     }
     // Send data to the API endpoint // http://localhost:3030/api/users // https://group-13-jtix.vercel.app/api/users
-    fetch("http://localhost:3030/api/users", {
+    fetch("https://group-13-jtix.vercel.app/api/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
