@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import ExampleLandingPage from './pages/ExampleLandingPage';
+import RegisterPage from './pages/Register';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/exampleLandingPage" element={<ExampleLandingPage />} />
+        <Route path="/register" element={<RegisterPage />} />
       </Routes>
       <Footer />
     </>

@@ -34,3 +34,7 @@
   width: 50px;
   height: auto;
 }
+
+.navbar .register-link {
+  margin-left: auto;
+}
