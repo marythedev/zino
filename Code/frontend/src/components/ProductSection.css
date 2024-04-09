@@ -15,6 +15,12 @@ h4 {
     text-overflow: hidden;
 }
 
+.products > * {
+    flex: 1 1 0;
+    max-width: 330px;
+    min-width: 240px;
+}
+
 @media screen and (max-width: 1060px) {
     .products {
         gap: 10px;

@@ -5,6 +5,7 @@ import './UncontrolledCarousel.css';
 const UncontrolledCarousel = () => {
     return (
         <div id="carousel">
+            {/* <!-- PLACEHOLDER IMAGES TO BE UPDATED --> */}
             <Carousel>
                 <Carousel.Item>
                     <img src={window.location.origin + '/images/placeholders/carousel/tech-setup.jpg'} alt="Placeholder" className="img-fluid" />

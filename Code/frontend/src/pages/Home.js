@@ -19,15 +19,16 @@ const Home = () => {
           <img src={window.location.origin + '/icons/chevron-prev.png'} alt="previous" height={15}></img>
         </button>
         <ul id="home-category-nav" className="d-flex flex-row justify-content-between align-items-center">
-          <li><a href="#">Tech</a></li>
-          <li><a href="#">Outdoor Gear</a></li>
-          <li><a href="#">Home Appliances</a></li>
-          <li><a href="#">Women's</a></li>
-          <li><a href="#">Men's</a></li>
-          <li><a href="#">Kids'</a></li>
-          <li><a href="#">Accessories</a></li>
-          <li><a href="#">Shoes</a></li>
-          <li><a href="#">Other</a></li>
+          {/* <!-- LINKS TO BE UPDATED --> */}
+          <li><a href="/">Tech</a></li>
+          <li><a href="/">Outdoor Gear</a></li>
+          <li><a href="/">Home Appliances</a></li>
+          <li><a href="/">Women's</a></li>
+          <li><a href="/">Men's</a></li>
+          <li><a href="/">Kids'</a></li>
+          <li><a href="/">Accessories</a></li>
+          <li><a href="/">Shoes</a></li>
+          <li><a href="/">Other</a></li>
         </ul>
         <button className="scroll-btn" id="next" onClick={scrollRight}>
           <img src={window.location.origin + '/icons/chevron-next.png'} alt="next" height={15}></img>
@@ -35,12 +36,16 @@ const Home = () => {
       </div>
 
       <UncontrolledCarousel />
+      <ProductSection name='Deals'/>
+      <ProductSection name='Tech'/>
+      <ProductSection name='Outdoor Gear'/>
+      <ProductSection name='Shoes'/>
       <ProductSection />
 
       <br></br>
       <br></br>
       <br></br>
-    </div >
+    </div>
   );
 }
 
