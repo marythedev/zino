@@ -9,11 +9,11 @@ const {
 const authenticateToken = require("../middlewares/authenticateToken");
 const verifyAdmin = require("../middlewares/verifyAdmin");
 
-const adminController = require("../controllers/adminController"); // Ensure this path is correct
-const productController = require("../controllers/productController"); // Import the product controller
+const adminController = require("../controllers/adminController"); 
+const productController = require("../controllers/productController");
 const cartController = require("../controllers/cartController");
 const orderController = require("../controllers/orderController");
-
+const reviewController = require("../controllers/reviewController");
 const router = express.Router();
 
 router.get("/", routeController.default); // Server is running
