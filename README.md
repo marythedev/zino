@@ -32,7 +32,7 @@ The current prototype has Database models setup for consumer reviews. Future iss
 
 ### User Authentication (Done):
 
-Establish a secure login system for both customers and retail store owners.
+Establish a secure login system for both customers & admin.
 
 The current prototype allows for user authentication via a functioning Log-In implementation (both front-end & back-end).
 
@@ -40,6 +40,12 @@ The current prototype allows for user authentication via a functioning Log-In im
 Establish a user account creation system customers.
 
 The current prototype allows for user account creation via a functioning registration module (both front-end & back-end).
+
+### Seller Authentication (To-Do):
+Establish a secure login system leveraging existing registration code to authenticate seller profiles.
+
+### Seller Registration (To-Do):
+Establish a seller account creation system for sellers (e-commerce retailers).
 
 ### Account Management (On-Going)
 Implement account management features that allow users to track order history, save favorite items, and receive personalized recommendations based on their purchase history.
