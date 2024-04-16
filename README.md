@@ -1,4 +1,4 @@
-# Group_13
+# OnlineShop
 
 ## Developers
 | Name        |   Role |     Github    | Email       |
@@ -55,15 +55,12 @@ Implement account management features that allow users to track order history, s
 Integrate a secure payment gateway supporting various methods to ensure a smooth and secure checkout process for customers. Current option is planned to be Stripe. 
 This is unimplemented as of now.
 
-### Admin Dashboard for Marketing and Business Insights (To-Do):
+### Data-Driven Insights & Tracking (To-Do):
 
 Develop an intuitive admin dashboard tailored for retail store owners, providing insights into sales performance, customer demographics, and marketing campaign effectiveness.
 
-Implement an advanced inventory management system within the admin panel to monitor stock levels, track product movement, and generate real-time reports.
-
 Utilize data analytics to forecast demand trends, helping retail businesses optimize their inventory and prevent stockouts or overstock situations.
 
-### Data-Driven Insights & Tracking (To-Do):
 Integrate robust analytics tools within the Admin panel to track and analyze customer behavior, purchasing patterns, and popular products.
 
 Provide actionable insights derived from gathered data to aid retail store owners in making informed marketing and business decisions. This would be items such as tracking how many clickthroughs to certain products, how many and which items have been added to cart but not checked-out, etc.
