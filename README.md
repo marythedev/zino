@@ -55,13 +55,9 @@ Implement account management features that allow users to track order history, s
 Integrate a secure payment gateway supporting various methods to ensure a smooth and secure checkout process for customers. Current option is planned to be Stripe. 
 This is unimplemented as of now.
 
-
-
 ### Admin Dashboard for Marketing and Business Insights (To-Do):
 
 Develop an intuitive admin dashboard tailored for retail store owners, providing insights into sales performance, customer demographics, and marketing campaign effectiveness.
-
-### Inventory Management and Demand Forecasting (To-Do):
 
 Implement an advanced inventory management system within the admin panel to monitor stock levels, track product movement, and generate real-time reports.
 
@@ -127,5 +123,5 @@ Jest provides fast and parallel test execution, helping to speed up the testing 
 
 It has been used within the project at different stages to assist with testing (via simple automation) and ensure product behaviour.
 
-### Figma:
+#### Figma:
 Figma is used to create prototypes of interface design and animations for the web store pages.
