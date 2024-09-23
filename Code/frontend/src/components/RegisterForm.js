@@ -32,7 +32,9 @@ function RegisterForm() {
       return;
     }
     // Send data to the API endpoint // http://localhost:3030/api/users // https://group-13-jtix.vercel.app/api/users
-    fetch("https://group-13-jtix.vercel.app/api/users", {
+    fetch(
+      "https://group-13-jtix.vercel.app/api/users",
+      {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -45,6 +47,7 @@ function RegisterForm() {
     })
     .then(data => {
       if (data.message) {
+        console.log(data)
         setResponseMessage(data.message);
       } else {
         setResponseMessage("An error occurred. Please try again later.");

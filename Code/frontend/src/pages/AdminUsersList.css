@@ -1,0 +1,76 @@
+.headerUser {
+    padding: 20px; /* Adjust padding as needed */
+    display: flex;
+    justify-content: left; /* Center the table */
+}
+.table-container {
+    padding: 20px; /* Adjust padding as needed */
+    display: flex;
+    justify-content: center; /* Center the table */
+}
+
+.admin-table {
+    border-collapse: collapse;
+    width: 80%; /* Adjust the width as needed */
+}
+
+.admin-table th, .admin-table td {
+    border: 1px solid rgb(70, 64, 64);
+    padding: 8px;
+    text-align: left;
+}
+
+.search-bar {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-bar-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.results-per-page-container {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.results-per-page-container label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.results-per-page-container input {
+    padding: 8px;
+    width: 60px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.table-container {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination-container {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination-container button {
+    padding: 8px 16px;
+    margin: 0 10px;
+    font-size: 16px;
+    cursor: pointer;
+}

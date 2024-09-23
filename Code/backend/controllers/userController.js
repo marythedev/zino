@@ -108,6 +108,9 @@ async function createUser(req, res) {
   }
 }
 
+
+
+
 //Login User functionality
 async function loginUser(req, res) {
   const { username, password, token } = req.body;
@@ -119,6 +122,9 @@ async function loginUser(req, res) {
       return res.status(400).json({ message: "User not found" });
     }
 
+
+
+
     // Compare password
     const isValid = await bcrypt.compare(password, user.password);
     if (!isValid) {
@@ -128,6 +134,11 @@ async function loginUser(req, res) {
     // if (!verify2FAToken(user.twoFactorAuthenticationSecret, token)) {
     //   return res.status(400).json({ message: "Invalid 2FA token" });
     // }
+
+    // Check if the account is enabled
+    if (!user.account_enabled) {
+      return res.status(403).json({ message: "Account is not enabled." });
+    }
 
     // Generate a token
     const authToken = jwt.sign(

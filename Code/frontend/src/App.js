@@ -8,6 +8,8 @@ import RegisterPage from "./pages/Register";
 import NotFound from "./pages/NotFound";
 import Login from "./pages/Login";
 import Account from "./pages/Account";
+import AdminUsersList from "./pages/AdminUsersList";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/account" element={<Account />} />
+        <Route path="/manageUsers" element={<AdminUsersList />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
