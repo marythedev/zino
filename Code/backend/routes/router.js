@@ -7,13 +7,18 @@ const {
 } = require("../controllers/userController");
 
 const authenticateToken = require("../middlewares/authenticateToken");
-const verifyAdmin = require("../middlewares/verifyAdmin");
+const isAdmin = require("../middlewares/isAdmin");
 
+
+const listUsers = require("../controllers/adminListUsers");
+const toggleStatus = require("../controllers/adminToggleAccStatus");
 const adminController = require("../controllers/adminController"); 
 const productController = require("../controllers/productController");
 const cartController = require("../controllers/cartController");
 const orderController = require("../controllers/orderController");
 const reviewController = require("../controllers/reviewController");
+const submitContactForm = require('../controllers/contactController');
+
 const router = express.Router();
 
 router.get("/", routeController.default); // Server is running
@@ -23,8 +28,16 @@ router.post("/api/users", createUser); // Account Creation API
 
 router.post("/api/login", loginUser); //Login users
 
-// Admin routes - Prefix all admin routes with /api/admin
-router.use("/api/admin", authenticateToken, adminController);
+
+
+//**************************** admin stuff *******************************
+router.get("/api/admin/listUsers", authenticateToken, isAdmin, listUsers);
+router.post("/api/admin/toggleUser", authenticateToken, isAdmin, toggleStatus);
+
+router.post("/api/contact", submitContactForm);
+//************************************************************************
+
+
 
 // Product routes
 router.use("/api/products", productController); // Use product controller for product routes

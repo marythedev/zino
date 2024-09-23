@@ -16,6 +16,15 @@ const UserSchema = new mongoose.Schema(
       otpURL: String,
       isEnabled: Boolean,
     },
+    account_enabled: {
+      type: Boolean,
+      default: true,
+    },
+    account_type: {
+      type: String,
+      enum: ["merchant", "consumer"],
+      default: "consumer",
+    },
   },
   { timestamps: true }
 );

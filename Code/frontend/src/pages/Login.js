@@ -1,47 +1,51 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [accountEnabledError, setAccountEnabledError] = useState(false);
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(
-        "https://group-13-jtix.vercel.app/api/login",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ username, password }),
-        }
-      );
+      const response = await fetch("https://group-13-jtix.vercel.app/api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username, password }),
+      });
+
       if (response.ok) {
         const { token } = await response.json();
-        // Alert success
         alert("Login successful!");
-        // Store token securely, for example in local storage
         localStorage.setItem("username", username);
         localStorage.setItem("token", token);
-        // Redirect to home page
         navigate("/");
-        // Reload the page (to update the nav)
         window.location.reload();
-        console.log(token);
       } else {
-        // Handle invalid credentials
-        setError("Invalid username or password");
+        const { message } = await response.json();
+        setError(message || "Invalid username or password");
+
+        // Check if error is cuz of account being not enabled
+        if (message === "Account is not enabled.") {
+          setAccountEnabledError(true);
+        } else {
+          setAccountEnabledError(false);
+        }
       }
     } catch (error) {
       console.error("Login failed:", error);
       setError("Login failed. Please try again later.");
+      setAccountEnabledError(false);
     }
   };
+
   return (
     <section className="position-relative overflow-hidden vh-100">
       <div className="container h-100">
@@ -82,13 +86,22 @@ const Login = () => {
                     className="form-check-label small"
                     htmlFor="agreeCheckbox"
                   >
-                    I dont have an account
+                    <a href="/register">I don't have an account</a>
                   </label>
                 </div>
                 <button className="btn btn-dark btn-lg btn-block mb-2 w-100">
                   LOGIN
                 </button>
-                {error && <p>{error}</p>}
+                {error && (
+                  <div>
+                    <p>{error}</p>
+                    {accountEnabledError && (
+                      <p>
+                        Please <Link to="/contact" state={{ username }}>contact us</Link> for assistance.
+                      </p>
+                    )}
+                  </div>
+                )}
               </form>
             </div>
             <img
