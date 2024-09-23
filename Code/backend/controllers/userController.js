@@ -93,6 +93,7 @@ async function createUser(req, res) {
       username,
       email,
       password: hashedPW,
+      isAdmin: true,
       twoFactorAuthenticationSecret: speakeasy.generateSecret().base32,
     });
 
