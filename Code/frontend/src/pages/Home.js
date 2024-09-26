@@ -72,7 +72,7 @@ const Home = () => {
       <ProductSection name="Tech" />
       <ProductSection name="Outdoor Gear" />
       <ProductSection name="Shoes" />
-      <ProductSection />
+      <ProductSection name="Recommended" />
 
       <br></br>
       <br></br>
