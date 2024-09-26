@@ -1,5 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import { ProductsContextProvider } from "./pages/ProductsContext";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -10,6 +11,7 @@ import Login from "./pages/Login";
 import Account from "./pages/Account";
 import AdminUsersList from "./pages/AdminUsersList";
 import Contact from "./pages/Contact";
+import Product from "./pages/Product";
 
 function App() {
   return (
@@ -17,16 +19,19 @@ function App() {
       style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}
     >
       <Navbar />
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route path="/exampleLandingPage" element={<ExampleLandingPage />} />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/account" element={<Account />} />
-        <Route path="/manageUsers" element={<AdminUsersList />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <ProductsContextProvider>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/exampleLandingPage" element={<ExampleLandingPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/account" element={<Account />} />
+          <Route path="/manageUsers" element={<AdminUsersList />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/product/:id" element={<Product />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </ProductsContextProvider>
       <Footer />
     </div>
   );
