@@ -1,6 +1,6 @@
-// Admin Dashboard for list users
 import './AdminUsersList.css';
 import React, { useEffect, useState } from 'react';
+import { logAction } from '../components/logAction'; // Import logAction
 
 const AdminPage = () => {
     const [users, setUsers] = useState([]);
@@ -67,19 +67,21 @@ const AdminPage = () => {
                         user.username === updatedUser.user.username ? updatedUser.user : user
                     )
                 );
+
+                const newStatus = updatedUser.user.account_enabled ? 'Enabled' : 'Disabled';
+                await logAction(`${newStatus} user account: "${username}"`);
+
             } catch (err) {
                 console.error(err);
             }
         }
     };
 
-    // Filter users based on search term
     const filteredUsers = users.filter(user =>
         user.username.toLowerCase().includes(searchTerm.toLowerCase()) ||
         user.email.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
-    // Page nav stuff
     const indexOfLastUser = currentPage * usersPerPage;
     const indexOfFirstUser = indexOfLastUser - usersPerPage;
     const currentUsers = filteredUsers.slice(indexOfFirstUser, indexOfLastUser);

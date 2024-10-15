@@ -1,0 +1,32 @@
+.messages-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+.messages-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.message-item {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 10px;
+  transition: background 0.2s;
+}
+
+.message-item:hover {
+  background: #f0f0f0;
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.message-body {
+  margin-top: 10px;
+}

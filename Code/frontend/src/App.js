@@ -10,8 +10,10 @@ import NotFound from "./pages/NotFound";
 import Login from "./pages/Login";
 import Account from "./pages/Account";
 import AdminUsersList from "./pages/AdminUsersList";
+import AdminDash from "./pages/AdminDash";
 import Contact from "./pages/Contact";
 import Product from "./pages/Product";
+import Messages from "./pages/messages";
 
 function App() {
   return (
@@ -26,7 +28,9 @@ function App() {
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/account" element={<Account />} />
+          <Route path="/adminDashboard" element={<AdminDash />} />
           <Route path="/manageUsers" element={<AdminUsersList />} />
+          <Route path="/messages" element={<Messages />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/product/:id" element={<Product />} />
           <Route path="*" element={<NotFound />} />
