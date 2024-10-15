@@ -12,7 +12,7 @@ const AdminDash = () => {
 
   const fetchLogs = async () => {
     try {
-      const response = await fetch('http://localhost:3030/api/log', {
+      const response = await fetch('https://group-13-jtix.vercel.app/api/log', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -35,7 +35,7 @@ const AdminDash = () => {
   const fetchMessagesSummary = async () => {
     try {
       console.log("starting...")
-        const response = await fetch('http://localhost:3030/api/adminMessages', {
+        const response = await fetch('https://group-13-jtix.vercel.app/api/adminMessages', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

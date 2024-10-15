@@ -8,7 +8,7 @@ const Messages = () => {
 
   const fetchMessages = async () => {
     try {
-      const response = await fetch('http://localhost:3030/api/adminAllMessages', {
+      const response = await fetch('https://group-13-jtix.vercel.app/api/adminAllMessages', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

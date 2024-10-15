@@ -1,6 +1,6 @@
 export const logAction = async (message) => {
     try {
-        const response = await fetch('http://localhost:3030/api/log', {
+        const response = await fetch('https://group-13-jtix.vercel.app/api/log', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

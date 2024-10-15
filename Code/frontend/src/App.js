@@ -13,7 +13,7 @@ import AdminUsersList from "./pages/AdminUsersList";
 import AdminDash from "./pages/AdminDash";
 import Contact from "./pages/Contact";
 import Product from "./pages/Product";
-import Messages from "./pages/messages";
+import Messages from "./pages/Messages";
 
 function App() {
   return (
