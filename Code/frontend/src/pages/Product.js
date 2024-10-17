@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { ProductsContext } from './ProductsContext';
 import { useParams } from 'react-router-dom';
+import ReviewForm from '../components/ReviewForm';
 import './Product.css';
 
 const Product = () => {
@@ -13,8 +14,11 @@ const Product = () => {
         rating: '',
         sold: 0,
         inStock: 0,
-        options: []
+        options: [],
+        reviews: [],
     });
+    const [sortOption, setSortOption] = useState('mostRecent');
+    const [visibleReviews, setVisibleReviews] = useState(5);
 
     useEffect(() => {
         if (id) {
@@ -24,6 +28,35 @@ const Product = () => {
             }
         }
     }, [id, getProductsById]);
+
+    const addReview = (newReview) => {
+        setProduct((prevProduct) => ({
+            ...prevProduct,
+            reviews: [newReview, ...prevProduct.reviews],
+        }));
+    };
+
+    const sortedReviews = () => {
+        return [...product.reviews].sort((a, b) => {
+            if (sortOption === 'mostRecent') {
+                return new Date(b.date) - new Date(a.date);
+            }
+            if (sortOption === 'mostOldest') {
+                return new Date(a.date) - new Date(b.date);
+            }
+            if (sortOption === 'highestToLowest') {
+                return b.rating - a.rating;
+            }
+            if (sortOption === 'lowestToHighest') {
+                return a.rating - b.rating;
+            }
+            return 0;
+        });
+    };
+
+    const loadMoreReviews = () => {
+        setVisibleReviews((prevVisible) => prevVisible + 5);
+    };
 
     return (
         <div className="product-page">
@@ -41,7 +74,19 @@ const Product = () => {
 
                         <div className="rating-sold-stock">
                             <div className="rating">
-                                <img src={window.location.origin + '/images/placeholders/rating.png'} alt="rating" />
+                                <div className="star-rating">
+                                    {[...Array(5)].map((_, index) => (
+                                        <img
+                                            key={index}
+                                            src={
+                                                index < product.rating
+                                                    ? window.location.origin + '/icons/star-filled.png'
+                                                    : window.location.origin + '/icons/star.png'
+                                            }
+                                            alt="star"
+                                        />
+                                    ))}
+                                </div>
                                 <p>{product.rating}</p>
                             </div>
                             <p>{product.sold > 2000 ? '2000+' : product.sold} sold</p>
@@ -100,7 +145,6 @@ const Product = () => {
                                     }% off</p>
                                 </div>
                                 : null}
-
                             ${product.price}
                         </p>
                     </div>
@@ -115,16 +159,9 @@ const Product = () => {
                 <table>
                     <tbody>
                         {product.specs && product.specs.map((spec, index) => (
-                            index % 2 === 0 &&
                             <tr key={index}>
                                 <td className="spec-name">{spec.name}</td>
                                 <td>{spec.value}</td>
-                                {product.specs[index + 1] &&
-                                    <>
-                                        <td className="spec-name">{product.specs[index + 1].name}</td>
-                                        <td>{product.specs[index + 1].value}</td>
-                                    </>
-                                }
                             </tr>
                         ))}
                     </tbody>
@@ -136,25 +173,56 @@ const Product = () => {
             <div className="reviews">
                 <h3>Reviews ({product.reviews && product.reviews.length})</h3>
 
-                {product.reviews && product.reviews.map((review, index) => (
-                    <div key={index} className="review-card">
-                        <div className="review">
-                            <img className="review-avatar" src={window.location.origin + review.avatar} alt="Reviewer Avatar" />
-                            <div className="review-body">
-                                <p className="review-author">{review.author}</p>
-                                <p>{review.comment}</p>
-                            </div>
-                        </div>
-                        <div className="review-metadata">
-                            <div className="rating">
-                                <img src={window.location.origin + '/images/placeholders/rating.png'} alt="rating" />
-                                <p>{review.rating}</p>
-                            </div>
-                            <p className="review-date">{new Date(review.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
-                        </div>
-                    </div>
-                ))}
+                <ReviewForm addReview={addReview} />
 
+                <br />
+
+                <div className="filter-reviews">
+                    <button onClick={() => setSortOption('mostRecent')}>Most Recent</button>
+                    <button onClick={() => setSortOption('mostOldest')}>Most Oldest</button>
+                    <button onClick={() => setSortOption('highestToLowest')}>Highest to Lowest Rating</button>
+                    <button onClick={() => setSortOption('lowestToHighest')}>Lowest to Highest Rating</button>
+                </div>
+                <div className="review-section">
+                    {product.reviews.length > 0 ? (
+                        sortedReviews().slice(0, visibleReviews).map((review, index) => (
+                            <div key={index} className="review-card">
+                                <div className="review">
+                                    <img className="review-avatar" src={window.location.origin + review.avatar} alt="Reviewer Avatar" />
+                                    <div className="review-body">
+                                        <p className="review-author">{review.author}</p>
+                                        <p>{review.comment}</p>
+                                    </div>
+                                </div>
+                                <div className="review-metadata">
+                                    <div className="rating">
+                                        <div className="star-rating">
+                                            {[...Array(5)].map((_, index) => (
+                                                <img
+                                                    key={index}
+                                                    src={
+                                                        index < review.rating
+                                                            ? window.location.origin + '/icons/star-filled.png'
+                                                            : window.location.origin + '/icons/star.png'
+                                                    }
+                                                    alt="star"
+                                                />
+                                            ))}
+                                        </div>
+                                        <p>{review.rating}</p>
+                                    </div>
+                                    <p className="review-date">{new Date(review.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                                </div>
+                            </div>
+                        ))
+                    ) : (
+                        <p>No reviews yet.</p>
+                    )}
+
+                    {visibleReviews < product.reviews.length && (
+                        <button onClick={loadMoreReviews} className="load-more">Load More Reviews</button>
+                    )}
+                </div>
             </div>
 
             <br />
