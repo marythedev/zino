@@ -34,8 +34,6 @@ router.put("/api/users/profile", authenticateToken, updateUserProfile);
 
 router.post("/api/login", loginUser); //Login users
 
-
-
 //**************************** admin stuff *******************************
 router.get("/api/admin/listUsers", authenticateToken, isAdmin, listUsers);
 router.post("/api/admin/toggleUser", authenticateToken, isAdmin, toggleStatus);
@@ -44,12 +42,19 @@ router.post("/api/contact", submitContactForm);
 
 router.get("/api/log", authenticateToken, isAdmin, adminLog.get);
 router.post("/api/log", authenticateToken, isAdmin, adminLog.post);
-router.get("/api/adminMessages", authenticateToken, isAdmin, adminMessages.getMessagesSummary);
-router.get("/api/adminAllMessages", authenticateToken, isAdmin, adminMessages.getAllMessages);
+router.get(
+  "/api/adminMessages",
+  authenticateToken,
+  isAdmin,
+  adminMessages.getMessagesSummary
+);
+router.get(
+  "/api/adminAllMessages",
+  authenticateToken,
+  isAdmin,
+  adminMessages.getAllMessages
+);
 //************************************************************************
-
-
-
 
 // Product routes
 router.use("/api/products", productController); // Use product controller for product routes
