@@ -2,15 +2,32 @@ const mongoose = require("mongoose");
 
 const ProductSchema = new mongoose.Schema(
   {
-    title: { type: String, required: true, unique: true },
+    title: { type: String, required: true },
     desc: { type: String, required: true },
     img: { type: String, required: true },
     categories: { type: Array },
-    size: { type: Array },
-    color: { type: Array },
     price: { type: Number, required: true },
-    inStock: { type: Boolean, required: true },
-    quantity: { type: Number, required: true }, // New quantity field
+    priceBefore: { type: Number },
+    seller: { type: String, required: true },
+    saves: { type: Number, default: 0 },
+    sold: { type: Number, default: 0 },
+    rating: { type: Number, default: 0.0 },
+    inStock: { type: Boolean, required: true, default: false },
+    quantity: { type: Number, required: true, default: 0 },
+    colorOptions: [ {
+      colorName: { type: String },
+      colorValue: { type: String },
+      colorImg: { type: String },
+      colorQuantity: { type: Number },
+    }],
+    specifications: [ {
+      specName: { type: String },
+      specValue: { type: String },
+    }],
+    reviews: [ {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Review",
+    }],
   },
   { timestamps: true }
 );

@@ -25,6 +25,10 @@ const UserSchema = new mongoose.Schema(
       enum: ["merchant", "consumer"],
       default: "consumer",
     },
+    avatar: {
+      type: String,
+      default: "",
+    },
   },
   { timestamps: true }
 );

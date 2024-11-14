@@ -1,10 +1,8 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import { ProductsContextProvider } from "./pages/ProductsContext";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
-import ExampleLandingPage from "./pages/ExampleLandingPage";
 import RegisterPage from "./pages/Register";
 import NotFound from "./pages/NotFound";
 import Login from "./pages/Login";
@@ -14,6 +12,7 @@ import AdminDash from "./pages/AdminDash";
 import Contact from "./pages/Contact";
 import Product from "./pages/Product";
 import Messages from "./pages/Messages";
+import SearchResults from "./pages/SearchResults";
 
 function App() {
   return (
@@ -21,10 +20,8 @@ function App() {
       style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}
     >
       <Navbar />
-      <ProductsContextProvider>
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route path="/exampleLandingPage" element={<ExampleLandingPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/account" element={<Account />} />
@@ -33,9 +30,9 @@ function App() {
           <Route path="/messages" element={<Messages />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/product/:id" element={<Product />} />
+          <Route path="/search" element={<SearchResults />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </ProductsContextProvider>
       <Footer />
     </div>
   );

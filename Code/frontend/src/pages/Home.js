@@ -1,4 +1,5 @@
-import React from "react"; 
+import React from "react";
+import { Link } from "react-router-dom";
 import "./Home.css";
 import UncontrolledCarousel from "../components/UncontrolledCarousel";
 import ProductSection from "../components/ProductSection";
@@ -29,33 +30,32 @@ const Home = () => {
           id="home-category-nav"
           className="d-flex flex-row justify-content-between align-items-center"
         >
-          {/* <!-- LINKS TO BE UPDATED --> */}
           <li>
-            <a href="/">Tech</a>
+            <Link to="/search?category=Tech">Tech</Link>
           </li>
           <li>
-            <a href="/">Outdoor Gear</a>
+            <Link to="/search?category=Outdoor%20Gear">Outdoor Gear</Link>
           </li>
           <li>
-            <a href="/">Home Appliances</a>
+            <Link to="/search?category=Home%20Appliances">Home Appliances</Link>
           </li>
           <li>
-            <a href="/">Women's</a>
+            <Link to="/search?category=Women%27s">Women's</Link>
           </li>
           <li>
-            <a href="/">Men's</a>
+            <Link to="/search?category=Men%27s">Men's</Link>
           </li>
           <li>
-            <a href="/">Kids'</a>
+            <Link to="/search?category=Kids%27">Kids'</Link>
           </li>
           <li>
-            <a href="/">Accessories</a>
+            <Link to="/search?category=Accessories">Accessories</Link>
           </li>
           <li>
-            <a href="/">Shoes</a>
+            <Link to="/search?category=Shoes">Shoes</Link>
           </li>
           <li>
-            <a href="/">Other</a>
+            <Link to="/search?category=Other">Other</Link>
           </li>
         </ul>
         <button className="scroll-btn" id="next" onClick={scrollRight}>

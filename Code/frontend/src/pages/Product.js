@@ -1,12 +1,11 @@
-import React, { useState, useContext, useEffect } from 'react';
-import { ProductsContext } from './ProductsContext';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ReviewForm from '../components/ReviewForm';
+import axios from 'axios';
 import './Product.css';
 
 const Product = () => {
     const { id } = useParams();
-    const { getProductsById } = useContext(ProductsContext);
     const [product, setProduct] = useState({
         title: '',
         seller: '',
@@ -22,12 +21,14 @@ const Product = () => {
 
     useEffect(() => {
         if (id) {
-            const fetchedProduct = getProductsById(id);
-            if (fetchedProduct) {
-                setProduct(fetchedProduct);
-            }
+            axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/products/find/${id}`)
+            .then((response) => {
+                setProduct(response.data);
+            }).catch((error) => {
+                console.error('Error fetching product:', error);
+            });
         }
-    }, [id, getProductsById]);
+    }, [id]);
 
     const addReview = (newReview) => {
         setProduct((prevProduct) => ({
