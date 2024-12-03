@@ -45,7 +45,7 @@ const Email = () => {
                 if (token) {
                     try {
                         const decodedToken = jwtDecode(token);
-                        var msg = `${decodedToken.userId} sent email to: `
+                        var msg = `sent email to: `
 
                         if(sendToAll === false){
                             msg += `${email} `

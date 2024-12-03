@@ -29,7 +29,8 @@ const sendEmail = async (email, subject, message, sendToAll) => {
         let emails = [];
         
         if (sendToAll){
-            emails = getAllEmails();
+            emails = await getAllEmails() || [];
+            console.log(`emails: ${emails}`)
         }
         
         const mailOptions = {
@@ -54,13 +55,27 @@ const email = {
 
         const {email, subject, message, sendToAll} = req.body;
         console.log(email, subject, message, sendToAll);
-        if (!email || !subject || !message) {
-            return res.status(400).json({ error: 'All fields are required' });
+        
+        if(sendToAll === true){
+            if (!subject || !message) {
+                return res.status(400).json({ error: 'All fields are required' });
+            }
+    
+            sendEmail(email, subject, message, sendToAll);
+    
+            res.status(200).json({ message: 'Mass Email sent successfully!' });
+        }
+        else if (sendToAll === false){
+            if (!email || !subject || !message) {
+                return res.status(400).json({ error: 'All fields are required' });
+            }
+    
+            sendEmail(email, subject, message, sendToAll);
+    
+            res.status(200).json({ message: 'Single Email sent successfully!' });
         }
 
-        sendEmail(email, subject, message, sendToAll);
 
-        res.status(200).json({ message: 'Email sent successfully!' });
     }
 
 }
