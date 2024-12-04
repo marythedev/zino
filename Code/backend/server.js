@@ -14,8 +14,8 @@ app.use(express.json());
 
 // Mongo Connection
 
-//const uri = "mongodb+srv://capstone:5ai6KcG6Jll9EXA4@capstone-ecommerce.x4jcmxk.mongodb.net/?retryWrites=true&w=majority&appName=Capstone-Ecommerce";
-const uri = "mongodb+srv://cAdmin:54xyPhKR5LhQDiIG@clcap.zlpvbwi.mongodb.net/?retryWrites=true&w=majority&appName=CLCap" //test DB
+const uri = "mongodb+srv://capstone:5ai6KcG6Jll9EXA4@capstone-ecommerce.x4jcmxk.mongodb.net/?retryWrites=true&w=majority&appName=Capstone-Ecommerce";
+//const uri = "mongodb+srv://cAdmin:54xyPhKR5LhQDiIG@clcap.zlpvbwi.mongodb.net/?retryWrites=true&w=majority&appName=CLCap" //test DB
 
 mongoose
   .connect(uri, {})
