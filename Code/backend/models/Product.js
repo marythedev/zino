@@ -14,19 +14,43 @@ const ProductSchema = new mongoose.Schema(
     rating: { type: Number, default: 0.0 },
     inStock: { type: Boolean, required: true, default: false },
     quantity: { type: Number, required: true, default: 0 },
-    colorOptions: [ {
+    colorOptions: [{
       colorName: { type: String },
       colorValue: { type: String },
       colorImg: { type: String },
       colorQuantity: { type: Number },
     }],
-    specifications: [ {
+    specifications: [{
       specName: { type: String },
       specValue: { type: String },
     }],
-    reviews: [ {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Review",
+    reviews: [{
+      productId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Product",
+        required: true,
+      },
+      author: {
+        type: String,
+        required: true,
+      },
+      rating: {
+        type: Number,
+        required: true,
+        min: 1,
+        max: 5,
+      },
+      comment: {
+        type: String,
+      },
+      createdAt: {
+        type: Date,
+        default: Date.now,
+      },
+      images: {
+        type: Array,
+        default: [],
+      }
     }],
   },
   { timestamps: true }

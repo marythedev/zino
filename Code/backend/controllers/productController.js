@@ -29,6 +29,26 @@ router.put("/:id", verifyTokenAndAdmin, async (req, res) => {
   }
 });
 
+// UPDATE a product - only add review (Everyone)
+router.put("/addreview/:id", async (req, res) => {
+  try {
+    console.log(req.body);
+    console.log(req.body.newProduct.reviews);
+    const updatedProduct = await Product.findByIdAndUpdate(
+      req.params.id,
+      {
+        $set: { reviews: req.body.newProduct.reviews },
+      },
+      { new: true }
+    );
+    res.status(200).json(updatedProduct);
+  } catch (err) {
+    console.log(err)
+    res.status(500).json(err);
+  }
+});
+
+
 // DELETE a product (Admin only)
 router.delete("/:id", verifyTokenAndAdmin, async (req, res) => {
   try {
