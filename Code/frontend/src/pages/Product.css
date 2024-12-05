@@ -20,7 +20,7 @@
   max-height: 500px;
 }
 
-.product-image > img {
+.product-image>img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -63,7 +63,7 @@
   justify-content: space-between;
 }
 
-.rating-sold-stock > p,
+.rating-sold-stock>p,
 .review-date {
   color: rgba(0, 0, 0, 0.75);
   line-height: 1;
@@ -71,6 +71,12 @@
   font-weight: 600;
   margin-top: 10px;
   text-align: right;
+}
+
+.review-images {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
 }
 
 .product-custom-options {
@@ -95,22 +101,22 @@ button.option-chip {
 
 button.option-chip:focus {
   outline: none;
-  background-color:  black;
+  background-color: black;
   color: white;
 }
 
-.color-option > button {
+.color-option>button {
   border-radius: 50%;
   padding: 0;
   border: none;
 }
 
-.color-option > button:focus {
+.color-option>button:focus {
   outline: none;
   border: 1px solid black;
 }
 
-.color-option > button > img {
+.color-option>button>img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -202,7 +208,7 @@ td.spec-name {
 .review-section {
   max-height: 700px;
   padding: 15px;
-  overflow-x: auto;
+  overflow-x: hidden;
 }
 
 .filter-reviews {
@@ -213,7 +219,7 @@ td.spec-name {
   gap: 10px;
 }
 
-.filter-reviews > button {
+.filter-reviews>button {
   border: 1px solid black;
   border-radius: 5px;
   padding: 5px 10px;
@@ -221,8 +227,8 @@ td.spec-name {
   font-size: 16px;
 }
 
-.filter-reviews > button:hover,
-.filter-reviews > button:focus {
+.filter-reviews>button:hover,
+.filter-reviews>button:focus {
   background-color: black;
   color: white;
 }
@@ -300,7 +306,7 @@ td.spec-name {
     width: 100%;
   }
 
-  .product-image > img {
+  .product-image>img {
     border-radius: 0;
   }
 
@@ -326,7 +332,7 @@ td.spec-name {
 
   tbody {
     grid-template-columns: 1fr;
-  }  
+  }
 
   .review-card {
     margin: 28px 0;
@@ -350,7 +356,7 @@ td.spec-name {
   .product-page .rating {
     justify-content: flex-start;
   }
-  
+
   .product-page .review-author {
     padding-top: 3px;
   }
@@ -358,5 +364,5 @@ td.spec-name {
   .review-avatar {
     display: none;
   }
-  
+
 }

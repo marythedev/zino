@@ -33,6 +33,14 @@
     resize: none;
     font-size: 16px;
     padding: 16px;
+    height: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    .review-form-message textarea {
+        min-width: 350px;
+        resize: horizontal;
+    }
 }
 
 .review-form-message button {

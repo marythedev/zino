@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './ReviewForm.css';
+import ImageUploader from './ImageUploader';
 
 const ReviewForm = ({ addReview }) => {
     const [rating, setRating] = useState(0);
@@ -23,13 +24,13 @@ const ReviewForm = ({ addReview }) => {
         if (rating === 0) {
             return;
         }
-        
+
         const newReview = {
             author: 'User',
             comment: review,
             rating,
-            date: new Date(),
-            avatar: '/images/placeholders/reviewUserAvatar.png',
+            createdAt: new Date(),
+            images: images,
         };
 
         addReview(newReview);
@@ -49,15 +50,19 @@ const ReviewForm = ({ addReview }) => {
                     ))}
                 </div>
                 <div className="review-form-message">
-                    <textarea 
-                        placeholder="Write a review" 
-                        rows={2} 
-                        value={review} 
-                        onChange={(e) => setReview(e.target.value)} 
+                    <textarea
+                        placeholder="Write a review"
+                        rows={2}
+                        value={review}
+                        onChange={(e) => setReview(e.target.value)}
                     />
-                    <img src={window.location.origin + '/icons/add-image.png'} height={30} alt="add images" />
+                    <ImageUploader publicKey="9aff252c34d4e829b757" secretKey="18ec2585a2351f059b2f" multiple={true} images={images} onChange={setImages} >
+                        <img src={window.location.origin + '/icons/add-image.png'} height={30} alt="add images" />
+                    </ImageUploader>
                     <button type="submit" className={rating === 0 ? 'not-working' : ''}>Add Review</button>
                 </div>
+            </div>
+            <div className="preview-images">
             </div>
         </form>
     )

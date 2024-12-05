@@ -22,28 +22,45 @@ const Product = () => {
     useEffect(() => {
         if (id) {
             axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/products/find/${id}`)
-            .then((response) => {
-                setProduct(response.data);
-            }).catch((error) => {
-                console.error('Error fetching product:', error);
-            });
+                .then((response) => {
+                    setProduct(response.data);
+                }).catch((error) => {
+                    console.error('Error fetching product:', error);
+                });
         }
     }, [id]);
 
     const addReview = (newReview) => {
-        setProduct((prevProduct) => ({
-            ...prevProduct,
-            reviews: [newReview, ...prevProduct.reviews],
-        }));
+        newReview = {
+            author: 'User',
+            comment: newReview.comment,
+            rating: newReview.rating,
+            createdAt: newReview.createdAt,
+            images: newReview.images,
+            //userId: '60b6a4a7b2b8d00015a2b3f4',
+            productId: id
+        };
+        let newProduct = { ...product, reviews: [newReview, ...product.reviews] };
+        setProduct(newProduct);
+
+        axios.put(`${process.env.REACT_APP_BACKEND_URL}/api/products/addreview/${id}`,{
+            newProduct
+        })
+    
+            .then((response) => {
+                console.log('Review added:', response.data);
+            }).catch((error) => {
+                console.error('Error adding review:', error);
+            });
     };
 
     const sortedReviews = () => {
         return [...product.reviews].sort((a, b) => {
             if (sortOption === 'mostRecent') {
-                return new Date(b.date) - new Date(a.date);
+                return new Date(b.createdAt) - new Date(a.createdAt);
             }
             if (sortOption === 'mostOldest') {
-                return new Date(a.date) - new Date(b.date);
+                return new Date(a.createdAt) - new Date(b.createdAt);
             }
             if (sortOption === 'highestToLowest') {
                 return b.rating - a.rating;
@@ -189,10 +206,17 @@ const Product = () => {
                         sortedReviews().slice(0, visibleReviews).map((review, index) => (
                             <div key={index} className="review-card">
                                 <div className="review">
-                                    <img className="review-avatar" src={window.location.origin + review.avatar} alt="Reviewer Avatar" />
+                                    <img className="review-avatar" src={window.location.origin + '/images/placeholders/reviewUserAvatar.png'} alt="Reviewer Avatar" />
                                     <div className="review-body">
                                         <p className="review-author">{review.author}</p>
                                         <p>{review.comment}</p>
+                                        {review.images && review.images.length > 0 && (
+                                            <div className="review-images">
+                                                {review.images.map((image, index) => (
+                                                    <img key={index} style={{ height: "100px", borderRadius: 8 }} src={image} alt={`Review ${index + 1}`} />
+                                                ))}
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
                                 <div className="review-metadata">
@@ -212,7 +236,7 @@ const Product = () => {
                                         </div>
                                         <p>{review.rating}</p>
                                     </div>
-                                    <p className="review-date">{new Date(review.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                                    <p className="review-date">{new Date(review.createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
                                 </div>
                             </div>
                         ))
