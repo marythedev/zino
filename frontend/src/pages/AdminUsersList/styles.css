@@ -1,0 +1,84 @@
+.headerUser {
+    padding: 20px;
+    display: flex;
+    justify-content: left;
+}
+
+.container1 {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-bar-container {
+    margin-bottom: 20px;
+    width: 80%;
+}
+
+.search-bar {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.table-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1px;
+    width: 80%;
+    border: 1px solid rgb(70, 64, 64);
+    background-color: rgb(70, 64, 64);
+}
+
+.table-header,
+.table-row {
+    display: contents;
+}
+
+.cell {
+    background-color: #fff;
+    padding: 8px;
+    border: 1px solid rgb(70, 64, 64);
+    text-align: left;
+}
+
+.header-cell {
+    font-weight: bold;
+    background-color: #f0f0f0;
+}
+
+.results-per-page-container {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.results-per-page-container label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.results-per-page-container input {
+    padding: 8px;
+    width: 60px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.pagination-container {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination-container button {
+    padding: 8px 16px;
+    margin: 0 10px;
+    font-size: 16px;
+    cursor: pointer;
+}

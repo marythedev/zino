@@ -1,14 +1,13 @@
-# OnlineShop
+# KartHaus
 
 ## Developers
-| Name        |   Role |     Github    | Email       |
-| ----------- | --------- | --------- | --------------------------- |
-| Stephen Vizl  | Full-stack Dev| svizl1 | svizl1@myseneca.ca |
-| Maria Dmytrenko  | Lead Front-End Dev | marythedev | mdmytrenko@myseneca.ca |
-| Tianchen Zhang  | Back-End Dev | tzhang98 | tzhang98@myseneca.ca |
-| Abel Okoh  | Full-Stack Dev | Abellybaba | aokoh@myseneca.ca |
+| Name        |   Role |     Github    |
+| ----------- | --------- | --------- |
+| Stephen Vizl  | Full-stack Developer| svizl1 |
+| Maria Dmytrenko  | UI/UX & Front-End Developer | marythedev |
+| Tianchen Zhang  | Back-End Developer | tzhang98 |
+| Abel Okoh  | Full-Stack Developer | Abellybaba |
 
-## Project Description
 This project aims to create a powerful e-commerce platform designed specifically for a retail business. The envisioned website will serve as a comprehensive solution focused on facilitating efficient item sales and empowering the store to leverage data for informed marketing and business decisions. The project will concentrate on implementing key features to optimize the retail e-commerce process with a primary focus on:
 
 ### Responsive Design (On-Going):

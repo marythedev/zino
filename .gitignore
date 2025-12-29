@@ -1,5 +1,3 @@
-# Ignore Node modules
 node_modules/
-
-# Ignore .env files - removed to make it easier for development currently.
-#.env
+.env
+.DS_Store
