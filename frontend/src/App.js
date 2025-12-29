@@ -2,9 +2,9 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
-import RegisterPage from "./pages/Register";
+import Signup from "./pages/Auth/Signup";
 import NotFound from "./pages/NotFound";
-import Login from "./pages/Login";
+import Login from "./pages/Auth/Login";
 import Account from "./pages/Account";
 import AdminUsersList from "./pages/AdminUsersList";
 import AdminDash from "./pages/AdminDash";
@@ -22,7 +22,7 @@ function App() {
             <Navbar />
             <Routes>
                 <Route exact path="/" element={<Home />} />
-                <Route path="/register" element={<RegisterPage />} />
+                <Route path="/signup" element={<Signup />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/account" element={<Account />} />
                 <Route path="/adminDashboard" element={<AdminDash />} />

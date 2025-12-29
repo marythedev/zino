@@ -1,0 +1,135 @@
+.auth-page-wrapper {
+    width: 100%;
+    height: calc(100vh - 100px);
+    min-height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.auth-form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    min-height: fit-content;
+}
+
+.auth-form {
+    max-width: 500px;
+    margin: auto;
+    padding: 32px;
+    border-radius: 14px;
+    text-align: center;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+.auth-form h2 {
+    margin-bottom: 8px;
+    font-size: 32px;
+    font-weight: 700
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 24px;
+    font-size: 18px;
+}
+
+.auth-form input,
+.auth-form button,
+.error-box {
+    width: 100%;
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+}
+
+.auth-form input {
+    border: 1px solid #ddd;
+    font-size: 14px;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+.auth-form input:focus {
+    outline: none;
+    border-color: #212529;
+    box-shadow: 0 0 0 2px rgba(33, 37, 41, 0.15);
+}
+
+.auth-form button {
+    border: none;
+    background: #212529;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.1s;
+}
+
+.error-box {
+    background: #ffe5e5;
+    color: #b00020;
+    font-size: 14px;
+}
+
+.error-box p {
+    margin: 0;
+}
+
+.help-link a {
+    color: #b00020;
+}
+
+.redirect-link {
+    margin-top: 4px;
+    font-size: 14px;
+}
+
+.help-link a,
+.redirect-link a {
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.help-link a:hover,
+.redirect-link a:hover {
+    text-decoration: underline;
+}
+
+aside {
+    flex: 1;
+    height: 100%;
+}
+
+aside img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+@media (max-width: 992px) {
+    .auth-form-wrapper {
+        flex-direction: column;
+        min-height: auto;
+        max-width: 100%;
+    }
+
+    aside {
+        display: none;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

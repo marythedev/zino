@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import UncontrolledCarousel from "../../components/ImageCarousel";
+import ImageCarousel from "../../components/ImageCarousel";
 import ProductSection from "../../components/ProductSection";
 import "./styles.css";
 
@@ -66,7 +66,7 @@ const Home = () => {
                 </button>
             </div>
 
-            <UncontrolledCarousel />
+            <ImageCarousel />
             <ProductSection name="Deals" />
             <ProductSection name="Tech" />
             <ProductSection name="Outdoor Gear" />

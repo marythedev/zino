@@ -102,7 +102,7 @@ const Navbar = () => {
                     <Link to="/login">
                         <Button variant="dark">Login</Button>
                     </Link>
-                    <Link to="/register">
+                    <Link to="/signup">
                         <Button variant="outline-dark" id="signup-btn">
                             Signup
                         </Button>
