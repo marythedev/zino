@@ -38,7 +38,9 @@
 }
 
 .auth-form input,
+.auth-form textarea,
 .auth-form button,
+.success-box,
 .error-box {
     width: 100%;
     border-radius: 8px;
@@ -52,7 +54,8 @@
     transition: border 0.2s, box-shadow 0.2s;
 }
 
-.auth-form input:focus {
+.auth-form input:focus,
+.auth-form textarea:focus {
     outline: none;
     border-color: #212529;
     box-shadow: 0 0 0 2px rgba(33, 37, 41, 0.15);
@@ -72,12 +75,19 @@
     background: #343a40;
 }
 
+.success-box {
+    background: #e6f7ee;
+    color: #0f7a3d;
+    font-size: 14px;
+}
+
 .error-box {
     background: #ffe5e5;
     color: #b00020;
     font-size: 14px;
 }
 
+.success-box p,
 .error-box p {
     margin: 0;
 }

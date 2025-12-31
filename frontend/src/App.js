@@ -3,17 +3,17 @@ import { jwtDecode } from "jwt-decode";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
-import Signup from "./pages/Auth/Signup";
-import NotFound from "./pages/NotFound";
-import Login from "./pages/Auth/Login";
+import SearchResults from "./pages/SearchResults";
+import Product from "./pages/Product";
 import Account from "./pages/Account";
+import Signup from "./pages/FormPage/Signup";
+import Login from "./pages/FormPage/Login";
+import Contact from "./pages/FormPage/Contact";
 import AdminUsersList from "./pages/AdminUsersList";
 import AdminDash from "./pages/AdminDash";
-import Contact from "./pages/Contact";
-import Product from "./pages/Product";
-import Messages from "./pages/Messages";
-import SearchResults from "./pages/SearchResults";
+import InternalMessages from "./pages/InternalMessages";
 import EmailComponent from "./components/Email";
+import NotFound from "./pages/NotFound";
 
 const PrivateRoutes = () => {
     const token = localStorage.getItem("token");
@@ -48,8 +48,8 @@ function App() {
                     {/* Admin */}
                     <Route path="/admin" element={<AdminDash />} />
                     <Route path="/admin/manage-users" element={<AdminUsersList />} />
-                    <Route path="/admin/messages" element={<Messages />} />
-                    <Route path="/admin/email" element={<EmailComponent />} />
+                    <Route path="/admin/internal-messages" element={<InternalMessages />} />
+                    <Route path="/admin/email-users" element={<EmailComponent />} />
                 </Route>
 
                 <Route path="*" element={<NotFound />} />

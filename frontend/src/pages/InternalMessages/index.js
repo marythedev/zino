@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { logAction } from '../../components/logAction';
 import './styles.css';
 
-const Messages = () => {
+const InternalMessages = () => {
     const [messages, setMessages] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -474,4 +474,4 @@ const Messages = () => {
     );
 };
 
-export default Messages;
+export default InternalMessages;
