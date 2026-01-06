@@ -5,9 +5,9 @@ const ProductCard = (props) => {
     let productLink = '/' + props.productid;
     return (
         <Link to={'/product/' + props.productid} style={{ textDecoration: 'none', color: 'inherit' }}>
-            <Card style={{ margin: '5px', borderRadius: '15px' }}>
+            <Card style={{ margin: '5px', borderRadius: '15px', height: "285px" }}>
                 <a href={productLink} style={{ textDecoration: 'none', color: 'inherit' }}>
-                    <Card.Img variant="top" src={window.location.origin + props.image} style={{ borderRadius: '15px' }} />
+                    <Card.Img variant="top" src={props.image} style={{ borderRadius: '15px', height: "215px", objectFit: "cover" }} />
                     <Card.Body className="d-flex flex-row justify-content-between align-items-center" style={{ padding: '15px' }}>
                         <h6><strong>{props.title}</strong></h6>
                         <Card.Text style={{ lineHeight: '1', textAlign: 'right', paddingLeft: '20px' }}>

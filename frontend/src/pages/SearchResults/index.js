@@ -20,7 +20,7 @@ const SearchResults = () => {
     const observer = useRef();
 
     // Fetch products based on search params
-    const fetchProducts = async () => {
+    const fetchProducts = useCallback(async (page) => {
         const searchParams = new URLSearchParams(location.search);
         const query = searchParams.get("query") || "";
         const category = searchParams.get("category") || "";
@@ -33,32 +33,32 @@ const SearchResults = () => {
             const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/products`, {
                 params: {
                     search: query,
-                    category: category,
-                    minPrice: minPrice,
-                    maxPrice: maxPrice,
-                    page: currentPage,
+                    category,
+                    minPrice,
+                    maxPrice,
+                    page,
                     limit: productsPerPage,
                 }
             });
 
-            setProducts((prevProducts) => [...prevProducts, ...response.data.products]);
+            setProducts((prevProducts) => page === 1 ? response.data.products : [...prevProducts, ...response.data.products]);
             setHasMore(response.data.products.length > 0);
             setLoaded(true);
         } catch (error) {
             console.error("Error fetching products:", error);
             setLoaded(true);
         }
-    };
-
-    useEffect(() => {
-        fetchProducts();
-        console.log(products);
-    }, [currentPage, location.search]);
+    }, [location.search, productsPerPage]);
 
     useEffect(() => {
         setProducts([]);
         setCurrentPage(1);
-    }, [location.search]);
+        fetchProducts(1);
+    }, [location.search, fetchProducts]);
+
+    useEffect(() => {
+        fetchProducts(currentPage);
+    }, [currentPage, fetchProducts]);
 
     // Load more products when reaching the bottom of the list
     const lastProductElementRef = useCallback((node) => {

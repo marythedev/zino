@@ -75,7 +75,7 @@ const Product = () => {
         <div className="product-page">
             <div className="overview">
                 <div className="product-image">
-                    <img src={window.location.origin + product.image} alt={product.title} />
+                    <img src={product.image} alt={product.title} />
                 </div>
 
                 <div className="product-desc">
@@ -108,7 +108,7 @@ const Product = () => {
                     </div>
 
                     <div className="product-custom-options">
-                        {product.options?.map((option, index) => {
+                        {product.selections?.map((option, index) => {
                             if (index < 2) {
                                 if (option.type === "color") {
                                     return (
@@ -117,22 +117,24 @@ const Product = () => {
                                             <div className="option-chips">
                                                 {option.options?.map((color, idx) => (
                                                     <div key={idx} className="color-option">
-                                                        <button>
-                                                            <img src={window.location.origin + color.image} alt={color.name} />
-                                                        </button>
+                                                        <button className='color-image' style={{
+                                                            backgroundColor: color.value, border: color.value.toLowerCase() === '#ffffff'
+                                                                ? '1px solid black'
+                                                                : 'undefined'
+                                                        }}></button>
                                                         <p>{color.name}</p>
                                                     </div>
                                                 ))}
                                             </div>
                                         </div>
                                     );
-                                } else if (option.type === "chip") {
+                                } else if (option.type === "parameter") {
                                     return (
                                         <div key={index} className="option">
                                             <p>{option.name}</p>
                                             <div className="option-chips">
                                                 {option.options?.map((chip, idx) => (
-                                                    <button key={idx} className="option-chip">{chip}</button>
+                                                    <button key={idx} className="option-chip">{chip.name}</button>
                                                 ))}
                                             </div>
                                         </div>
@@ -173,10 +175,10 @@ const Product = () => {
 
                 <table>
                     <tbody>
-                        {product.specs && product.specs.map((spec, index) => (
+                        {product.specifications && product.specifications.map((specification, index) => (
                             <tr key={index}>
-                                <td className="spec-name">{spec.name}</td>
-                                <td>{spec.value}</td>
+                                <td className="spec-name">{specification.specName}</td>
+                                <td>{specification.specValue}</td>
                             </tr>
                         ))}
                     </tbody>

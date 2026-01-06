@@ -14,11 +14,15 @@ const ProductSchema = new mongoose.Schema(
         rating: { type: Number, default: 0.0 },
         inStock: { type: Boolean, required: true, default: false },
         quantity: { type: Number, required: true, default: 0 },
-        colorOptions: [{
-            colorName: { type: String },
-            colorValue: { type: String },
-            colorImg: { type: String },
-            colorQuantity: { type: Number },
+        selections: [{
+            type: {
+                type: String,
+            },
+            name: String,
+            options: [{
+                name: String,
+                value: String
+            }]
         }],
         specifications: [{
             specName: { type: String },

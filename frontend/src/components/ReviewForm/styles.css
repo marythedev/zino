@@ -53,8 +53,13 @@
     cursor: pointer;
 }
 
-.review-form-body button.not-working {
-    cursor: default;
+.review-form-message button:hover {
+    background: #343a40;
+}
+
+.review-form-message button.not-working {
+    cursor: not-allowed;
+    background-color: #2B2B2B;
 }
 
 @media screen and (max-width: 768px) {
