@@ -88,7 +88,6 @@ async function createUser(req, res) {
     }
 }
 
-
 // Login User
 async function loginUser(req, res) {
     const { username, password, token } = req.body;
@@ -106,10 +105,6 @@ async function loginUser(req, res) {
             return res.status(400).json({ message: "Invalid credentials" });
         }
 
-        // if (!verify2FAToken(user.twoFactorAuthenticationSecret, token)) {
-        //   return res.status(400).json({ message: "Invalid 2FA token" });
-        // }
-
         // Check if the account is enabled
         if (!user.account_enabled) {
             return res.status(403).json({ message: "Account is not enabled." });
@@ -122,7 +117,6 @@ async function loginUser(req, res) {
             { expiresIn: "1h" }
         );
 
-        // res.json({ message: "Login successful", token:authToken });
         // Send user info along with the token
         res.json({
             message: "Login successful",

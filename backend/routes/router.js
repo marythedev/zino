@@ -21,7 +21,6 @@ const email = require("../controllers/email");
 const adminMessages = require("../controllers/adminMessages");
 
 const { updateUserProfile } = require("../controllers/userController");
-//const { getAllProducts } = require("../controllers/productController");
 const router = express.Router();
 
 router.get("/", routeController.default); // Server is running
@@ -74,9 +73,7 @@ router.post('/adminAddResponse', authenticateToken, isAdmin, adminMessages.addRe
 //************************************************************************
 
 // Product routes
-router.use("/api/products", productController); // Use product controller for product routes
-// Get Products with Pagination, Search, and Filter
-// router.get("/api/products", getAllProducts);
+router.use("/api/products", productController);
 
 //router.post('/enable-2fa', authenticateToken, enable2FA); //Note to tianchen: enable 2FA does not exist in userController, why are you referencing this?
 router.post("/verify-2fa", authenticateToken, verify2FAToken);

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { logAction } from '../../components/logAction';
 import './styles.css';
 
@@ -16,10 +16,9 @@ const InternalMessages = () => {
     const [replies, setReplies] = useState({});
     const [isSaved, setIsSaved] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
-    const [searchByResponded, setSearchByResponded] = useState('all');
     const url = process.env.REACT_APP_BACKEND_URL
 
-    const fetchMessages = async () => {
+    const fetchMessages = useCallback(async () => {
         try {
             const response = await fetch(`${url}/api/adminAllMessages`, {
                 method: 'GET',
@@ -43,11 +42,11 @@ const InternalMessages = () => {
         } finally {
             setLoading(false);
         }
-    };
+    }, [url]);
 
     useEffect(() => {
         fetchMessages();
-    }, []);
+    }, [fetchMessages]);
 
 
     const handleSaveNote = () => {
