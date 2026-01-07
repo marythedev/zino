@@ -17,22 +17,17 @@ This project is a powerful **e-commerce platform** designed specifically for ret
 **Feature #1: Responsive Design**: Website is responsive and accessible across different devices, providing a user-friendly experience for customers. View below the desktop and the mobile versions of one of the product pages.
 
 <div style="display: flex; flex-direction: row;">
-  <img height="375" alt="image" src="https://github.com/user-attachments/assets/ea9e3d35-43e9-49ec-8d04-ebeeb39f1e73" />
+  <img height="365" alt="image" src="https://github.com/user-attachments/assets/0696e87d-2220-4e5b-8456-8a578d560280" />
   &nbsp;&nbsp;&nbsp;
-  <img height="375" alt="image" src="https://github.com/user-attachments/assets/678e0e7c-241d-47fc-9f3d-a5a6f68a10b1" />
+  <img height="365" alt="image" src="https://github.com/user-attachments/assets/678e0e7c-241d-47fc-9f3d-a5a6f68a10b1" />
 </div>
 
 <br><br>
 
 **Feature #2: Product Showcase**: Engaging product showcase to highlight items with detailed descriptions, high-quality images and pricing information. The prototype currently displays a well designed home page with highlighted products from various categories that should allow for the promotion of items & maximizing sale opportunities. The Home page features the nav, where users can view different product categories and select the one they are interested in, which helps with product discoverability. The idea is to catch the consumer eye to bring their attention to certain items that may have higher clickthrough and sales.
 
-<div style="display: flex; flex-direction: row;">
-  <img height="375" alt="image" src="https://github.com/user-attachments/assets/9ca1f47b-2eee-41db-a927-15479d7acbed" />
-  &nbsp;&nbsp;&nbsp;
-  <img height="375" alt="image" src="https://github.com/user-attachments/assets/e608ee01-c093-4d8f-b4f9-f7360356ddf5" />
-</div>
-
-<img height="560" alt="image" src="https://github.com/user-attachments/assets/cbe64226-5765-4ab4-a742-5b3b9d4d83d8" />
+<img height="375" alt="image" src="https://github.com/user-attachments/assets/9b0e2aa3-60d4-40c8-b701-52b0e38368c7" />
+<img height="570" alt="image" src="https://github.com/user-attachments/assets/cbe64226-5765-4ab4-a742-5b3b9d4d83d8" />
 
 <br><br>
 
