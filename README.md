@@ -17,9 +17,9 @@ This project is a powerful **e-commerce platform** designed specifically for ret
 **Feature #1: Responsive Design**: Website is responsive and accessible across different devices, providing a user-friendly experience for customers. View below the desktop and the mobile versions of one of the product pages.
 
 <div style="display: flex; flex-direction: row;">
-  <img height="365" alt="image" src="https://github.com/user-attachments/assets/0696e87d-2220-4e5b-8456-8a578d560280" />
+  <img height="360" alt="image" src="https://github.com/user-attachments/assets/0696e87d-2220-4e5b-8456-8a578d560280" />
   &nbsp;&nbsp;&nbsp;
-  <img height="365" alt="image" src="https://github.com/user-attachments/assets/678e0e7c-241d-47fc-9f3d-a5a6f68a10b1" />
+  <img height="360" alt="image" src="https://github.com/user-attachments/assets/678e0e7c-241d-47fc-9f3d-a5a6f68a10b1" />
 </div>
 
 <br><br>
