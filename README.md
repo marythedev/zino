@@ -1,6 +1,6 @@
 # Zino | Shop Online
 
-This project is a powerful **e-commerce platform** designed specifically for retail business. It enables efficient item sales, customer engagement and data-driven marketing and business decisions through a user-friendly web interface and an intuitive admin dashboard.
+This project is a powerful **e-commerce platform** designed specifically for retail business. It provides a smooth product showcase, encourages customer engagement and feedback, and makes online sales easy through a user-friendly web interface and an intuitive admin dashboard.
 
 ## Tech Stack
 ### MERN - MongoDB, Express, React, Node
@@ -26,45 +26,45 @@ This project is a powerful **e-commerce platform** designed specifically for ret
 
 **Feature #2: Product Showcase**: Engaging product showcase to highlight items with detailed descriptions, high-quality images and pricing information. The prototype currently displays a well designed home page with highlighted products from various categories that should allow for the promotion of items & maximizing sale opportunities. The Home page features the nav, where users can view different product categories and select the one they are interested in, which helps with product discoverability. The idea is to catch the consumer eye to bring their attention to certain items that may have higher clickthrough and sales.
 
-<img height="375" alt="image" src="https://github.com/user-attachments/assets/9b0e2aa3-60d4-40c8-b701-52b0e38368c7" />
-<img height="570" alt="image" src="https://github.com/user-attachments/assets/cbe64226-5765-4ab4-a742-5b3b9d4d83d8" />
+<img height="360" alt="image" src="https://github.com/user-attachments/assets/9b0e2aa3-60d4-40c8-b701-52b0e38368c7" />
+<img height="547" alt="image" src="https://github.com/user-attachments/assets/cbe64226-5765-4ab4-a742-5b3b9d4d83d8" />
 
 <br><br>
 
 **Feature #3: Customer Engagement & Feedback**: Users can add reviews with their rating of the product, comments and images to share their feedback and allow sellers to gather valuable insights.
 
-<img height="375" alt="image" src="https://github.com/user-attachments/assets/4c885d10-3702-4055-b2a8-691aa7204494" />
+<img height="360" alt="image" src="https://github.com/user-attachments/assets/4c885d10-3702-4055-b2a8-691aa7204494" />
 
 <br><br>
 
 **Feature #4: Contact Form**: On top of customer's engagement with the products, users can also contact Zino's team by submitting the Contact form inquiry. This is an easy way to get in touch with the platform to ask a question and/or handle any issues the customer might be having related to buying products on Zino.
 
-<img height="375" alt="image" src="https://github.com/user-attachments/assets/42c987f0-7b24-4e8d-8b8e-288a2add544d" />
+<img height="360" alt="image" src="https://github.com/user-attachments/assets/42c987f0-7b24-4e8d-8b8e-288a2add544d" />
 
 <br><br>
 
 **Feature #5: User Registration & Authentication**: The platform allows account creation for customers and has a secure login system for customers and admin.
 
-<img height="375" alt="image" src="https://github.com/user-attachments/assets/527e4260-eab9-4d09-80dd-dc6dc7fe8696" />
-<img height="375" alt="image" src="https://github.com/user-attachments/assets/ed2b325e-a899-431a-aa50-f60e43d0dfd0" />
+<img height="360" alt="image" src="https://github.com/user-attachments/assets/527e4260-eab9-4d09-80dd-dc6dc7fe8696" />
+<img height="360" alt="image" src="https://github.com/user-attachments/assets/ed2b325e-a899-431a-aa50-f60e43d0dfd0" />
 
 <br><br>
 
 **Feature #6: Admin Site**: Admin site allows to manage the platform effectively and provides several powerful tools. Admin Dashboard gathers all the tools together for easy navigation and displays the recent logs to enhance the security and transparency.
 
-<img height="375" alt="image" src="https://github.com/user-attachments/assets/4a02a5b8-69cf-463d-8616-b8f8a74e3b54" />
+<img height="360" alt="image" src="https://github.com/user-attachments/assets/4a02a5b8-69cf-463d-8616-b8f8a74e3b54" />
 
 **Internal Messages** *(view below)* is a tool to answer user inquiries submitted by the Contact Form. It stores the past/answered inquiries as well which can be easily found via search.
 
-<img height="375" alt="image" src="https://github.com/user-attachments/assets/da354fa0-cabd-4415-82e8-f1b629385d77" />
+<img height="360" alt="image" src="https://github.com/user-attachments/assets/da354fa0-cabd-4415-82e8-f1b629385d77" />
 
 **User Management System** *(view below)* allows to view the user list, search through it and enable/disable users, which makes it an indispensable admin tool.
 
-<img height="375" alt="image" src="https://github.com/user-attachments/assets/0dbefdc8-ef52-46d9-98c6-b215259be877" />
+<img height="360" alt="image" src="https://github.com/user-attachments/assets/0dbefdc8-ef52-46d9-98c6-b215259be877" />
 
 **Mass Mailer** *(view below)* is another powerful tool, which allows to send an email to specific or all platform users right from the app's UI.
 
-<img height="375" alt="image" src="https://github.com/user-attachments/assets/b503aaa6-3071-44c2-8e43-92acb4ec9545" />
+<img height="360" alt="image" src="https://github.com/user-attachments/assets/b503aaa6-3071-44c2-8e43-92acb4ec9545" />
 
 ## Developing Environment
 
@@ -81,7 +81,7 @@ This project is a powerful **e-commerce platform** designed specifically for ret
 ## Developers
 | Name        |   Role |     Github    |
 | ----------- | --------- | --------- |
-| Maria Dmytrenko  | UI/UX & React JS Developer | marythedev |
+| Maria Dmitrenko  | UI/UX & React JS Developer | marythedev |
 | Stephen Vizl  | QA & Full-Stack Developer | svizl1 |
 | Tianchen Zhang  | Back-End Developer | tzhang98 |
 | Abel Okoh  | Back-End Developer | Abellybaba |
